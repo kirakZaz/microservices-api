@@ -19,25 +19,25 @@ services:
     networks:
       - internal
 
-  greeter:
+  tokens:
     build:
       context: .
     image: microservices-api
     env_file: docker-compose.env
     environment:
-      SERVICES: greeter
+      SERVICES: tokens
     depends_on:
       - redis
     networks:
       - internal
 
-  products:
+  users:
     build:
       context: .
     image: microservices-api
     env_file: docker-compose.env
     environment:
-      SERVICES: products
+      SERVICES: users
     depends_on:
       - mongo
       - redis
