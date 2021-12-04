@@ -26,9 +26,7 @@ module.exports = {
 		routes: [
 			{
 				path: "/api",
-
 				whitelist: ["**"],
-
 				aliases: {
 					"REST users": "users",
 					"GET users": "users.list",
@@ -44,7 +42,6 @@ module.exports = {
 					"PUT tokens/:id": "tokens.update",
 					"DELETE tokens/:id": "tokens.remove",
 				},
-
 				// Route-level Express middlewares. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Middlewares
 				use: [],
 

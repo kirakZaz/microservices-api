@@ -1,4 +1,7 @@
 "use strict";
+const pino = require("pino");
+const pretty = require("pino-pretty");
+const logger = pino(pretty());
 
 const { MoleculerClientError } = require("moleculer").Errors;
 
@@ -121,6 +124,14 @@ module.exports = {
 				},
 			},
 			async handler(ctx) {
+				console.log("err");
+				logger.level = "trace";
+				logger.error("Username not found!");
+				logger.info("Username not found!");
+				logger.debug("Username not found!");
+				logger.trace("Username not found!");
+				logger.warn("Username not found!");
+				logger.fatal("Username not found!");
 				let entity = ctx.params.user;
 				await this.validateEntity(entity);
 				if (entity.username) {
@@ -185,7 +196,6 @@ module.exports = {
 			},
 			async handler(ctx) {
 				const newData = ctx.params.user;
-				console.log("newData", newData);
 				if (newData.id) {
 					const found = await this.adapter.findOne({
 						_id: newData.id,

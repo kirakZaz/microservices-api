@@ -37,6 +37,7 @@
     "moleculer-repl": "^0.6.6"
   },
   "dependencies": {
+    "amqplib": "^0.8.0",
     "bcryptjs": "^2.4.3",
     "eslint-config-airbnb": "^19.0.1",
     "ioredis": "^4.27.9",
@@ -46,6 +47,8 @@
     "moleculer-db-adapter-mongoose": "^0.8.12",
     "moleculer-web": "^0.10.2",
     "mongoose": "^6.0.14",
-    "prettier": "^2.5.0"
+    "pino-pretty": "^7.2.0",
+    "prettier": "^2.5.0",
+    "rhea-promise": "^2.1.0"
   }
 }
